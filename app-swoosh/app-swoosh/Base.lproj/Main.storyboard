@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" colorLabel="IBBuiltInLabel-Red">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,19 +83,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="bgimg" destination="qcQ-j6-HPX" id="dgQ-B3-d4r"/>
-                        <outlet property="swoosh" destination="VVK-ca-CiR" id="Mcl-DO-qbK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.43478260869566" y="131.25"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="8bY-kV-sbn">
             <objects>
-                <viewController id="QHN-17-zMu" sceneMemberID="viewController">
+                <viewController id="QHN-17-zMu" customClass="LeagueVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U9w-ja-2YE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,7 +166,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZZf-rA-OVF" kind="show" id="4hB-fU-HQE"/>
+                                    <action selector="onNextTapped:" destination="QHN-17-zMu" eventType="touchUpInside" id="eUU-MF-qFU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-o8-zGY">
@@ -206,16 +202,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zYW-Rg-TSo"/>
                     </view>
+                    <connections>
+                        <segue destination="ZZf-rA-OVF" kind="show" identifier="skillVCSegue" id="vFd-LW-yYN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2s8-Kq-bjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3gs-pw-8HW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="843.47826086956525" y="129.91071428571428"/>
+            <point key="canvasLocation" x="871" y="130"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="lee-F7-NCO">
             <objects>
-                <viewController id="ZZf-rA-OVF" sceneMemberID="viewController">
+                <viewController id="ZZf-rA-OVF" customClass="SkillVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vlu-T5-rU2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,7 +287,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="backButton"/>
                                 <connections>
-                                    <segue destination="U9b-O7-qnT" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="uom-Eu-wsH"/>
+                                    <action selector="onNextTap:" destination="ZZf-rA-OVF" eventType="touchUpInside" id="s0q-RW-kE3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -312,9 +311,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g4g-wN-Gih"/>
                     </view>
+                    <connections>
+                        <segue destination="QHN-17-zMu" kind="show" identifier="SkillVC_to_LeagueVC" id="Fte-yx-aDh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRT-99-zUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="U9b-O7-qnT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1601.449275362319" y="129.91071428571428"/>
         </scene>
@@ -326,4 +327,7 @@
         <image name="swooshLogo" width="119" height="20"/>
         <image name="welcomeScreenBG" width="414" height="736"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fte-yx-aDh"/>
+    </inferredMetricsTieBreakers>
 </document>
