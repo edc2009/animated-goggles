@@ -130,6 +130,9 @@
                                         <state key="normal" title="Mens">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onMensTapped:" destination="QHN-17-zMu" eventType="touchUpInside" id="TQb-gu-lwc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6q3-5l-WeR" userLabel="Women" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="100" width="374" height="50"/>
@@ -141,6 +144,9 @@
                                         <state key="normal" title="Women">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onWomensTapped:" destination="QHN-17-zMu" eventType="touchUpInside" id="hfQ-FI-yTY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAC-5R-zHF" userLabel="Co-Ed" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="200" width="374" height="50"/>
@@ -152,10 +158,13 @@
                                         <state key="normal" title="Co-Ed">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onCoedTapped:" destination="QHN-17-zMu" eventType="touchUpInside" id="UKa-f1-W6m"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xT-Kn-bos" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xT-Kn-bos" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                 <rect key="frame" x="20" y="812" width="374" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.4004708904" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -203,6 +212,7 @@
                         <viewLayoutGuide key="safeArea" id="zYW-Rg-TSo"/>
                     </view>
                     <connections>
+                        <outlet property="nextBtn" destination="7xT-Kn-bos" id="x4I-hh-mcd"/>
                         <segue destination="ZZf-rA-OVF" kind="show" identifier="skillVCSegue" id="vFd-LW-yYN"/>
                     </connections>
                 </viewController>
@@ -328,6 +338,7 @@
         <image name="welcomeScreenBG" width="414" height="736"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="vFd-LW-yYN"/>
         <segue reference="Fte-yx-aDh"/>
     </inferredMetricsTieBreakers>
 </document>
